@@ -1,0 +1,1 @@
+obips.Clipboard=function(){};obips.Clipboard.Clip=function(b,a){this.wasCut=b;this.object=a};

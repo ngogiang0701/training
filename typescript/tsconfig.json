@@ -1,0 +1,11 @@
+{
+	"compilerOptions":{
+		"outDir" : "mainjs",
+		"target" : "ES6",
+		"watch" : true
+	},
+	"exclude":[
+		"mainjs",
+		"theme"
+	]
+}

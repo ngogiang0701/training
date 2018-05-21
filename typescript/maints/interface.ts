@@ -145,12 +145,12 @@ interface NumberDictionary {
 	// name: string;
 }
 
-let new1: NumberDictionary;
-new1 = {
-["a": 1];
-length: 1;
-};
-console.log(new1["a"]);
+// let new1: NumberDictionary;
+// new1 = {
+// ["a": 1];
+// length: 1;
+// };
+// console.log(new1["a"]);
 // ???????????????????
 
 
@@ -177,9 +177,44 @@ class Clock implements ClockInterface{
 let d1 = new Date("Sun May 20 2018 22:05:48");
 // console.log(d1);
 
-let a1 = new Clock(20,02);
+let a1 = new Clock(20,2);
 a1.setTime(d1);
 console.log(a1);
 
 
 // ???????????????/
+
+interface clkConstructor {
+	new (hour: number, minute: number): clkInterface;
+}
+
+interface clkInterface {
+	tick();
+}
+
+function createClock (ctor: clkConstructor, hour: number, minute: number) : clkInterface
+{
+	return new ctor(hour, minute);
+}
+
+class DigitalClock implements clkInterface{
+	constructor(h:number, m:number){}
+		tick()
+		{
+			console.log("beep beep");
+		}
+}
+
+class AnalogClock implements clkInterface{
+	constructor (h: number, m: number){}
+	tick(){
+		console.log("tick tock");
+	}
+}
+
+let digital = createClock(DigitalClock, 12, 17);
+
+let analog = createClock (AnalogClock, 7, 32);
+
+console.log(digital);
+

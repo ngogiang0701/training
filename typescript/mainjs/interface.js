@@ -61,12 +61,6 @@ class Cat {
 }
 class Dog extends Animal {
 }
-let new1;
-new1 = {
-    ["a"]: 1,
-    length: 1
-};
-console.log(new1["a"]);
 class Clock {
     setTime(d) {
         this.currentTime = d;
@@ -78,7 +72,24 @@ class Clock {
 }
 let d1 = new Date("Sun May 20 2018 22:05:48");
 // console.log(d1);
-let a1 = new Clock(20, 02);
+let a1 = new Clock(20, 2);
 a1.setTime(d1);
 console.log(a1);
-// ???????????????/
+function createClock(ctor, hour, minute) {
+    return new ctor(hour, minute);
+}
+class DigitalClock {
+    constructor(h, m) { }
+    tick() {
+        console.log("beep beep");
+    }
+}
+class AnalogClock {
+    constructor(h, m) { }
+    tick() {
+        console.log("tick tock");
+    }
+}
+let digital = createClock(DigitalClock, 12, 17);
+let analog = createClock(AnalogClock, 7, 32);
+console.log(digital);

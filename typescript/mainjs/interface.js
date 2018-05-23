@@ -94,10 +94,10 @@ class AnalogClock {
 let digital = createClock(DigitalClock, 12, 17);
 let analog = createClock(AnalogClock, 7, 32);
 digital.tick();
-// let square = <Square>{};
-// square.color = 'blue';
-// square.sideLength = 10;
-// console.log(square);
+let square = {};
+square.color = 'blue';
+square.sideLength = 10;
+console.log(square);
 class ss1 {
     constructor() {
         this.color = 'black';
@@ -110,3 +110,34 @@ class ss1 {
 }
 let ss1_01 = new ss1();
 console.log(ss1_01.color);
+function getCounter() {
+    let counter = function (start) { console.log(start); };
+    counter.interval = 123;
+    counter.reset = function () { counter.interval = 0; console.log('adfasdf'); };
+    return counter;
+}
+let c0 = getCounter();
+// c0(10);
+// c0.reset();
+// c0.interval = 5.0;
+c0(10);
+c0.reset();
+// setTimeout(() =>{
+// 	console.log(c0.interval);
+// },2000);
+console.log(c0.interval);
+//  interface extending classes
+class Control {
+}
+class Button extends Control {
+    select() { }
+    ;
+}
+class TextBox extends Control {
+    select() { }
+    ;
+}
+class Image1 extends Control {
+    select() { }
+    ;
+}

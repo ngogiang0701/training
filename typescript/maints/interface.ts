@@ -229,10 +229,10 @@ interface Square extends Shape{
 	sideLength: number;
 }
 
-// let square = <Square>{};
-// square.color = 'blue';
-// square.sideLength = 10;
-// console.log(square);
+let square = <Square>{};
+square.color = 'blue';
+square.sideLength = 10;
+console.log(square);
 
 class ss1 implements Square{
 	color: string = 'black';
@@ -247,3 +247,61 @@ class ss1 implements Square{
 let ss1_01 = new ss1();
 
 console.log(ss1_01.color);
+
+interface Penstroke {
+	penWidth: number;
+}
+
+interface Square1 extends Shape, Penstroke{
+	sideLength1: number;
+} 
+
+// Hybrid Types
+
+interface Counter {
+	(start: number) : string;
+	interval: number;
+	reset(): void;
+}
+
+function getCounter(): Counter{
+
+	let counter = <Counter> function (start: number){console.log(start);};
+	counter.interval = 123;
+
+	counter.reset = function(){counter.interval= 0; console.log(	'adfasdf');};
+	return counter;
+}
+
+let c0 = getCounter();
+// c0(10);
+// c0.reset();
+// c0.interval = 5.0;
+c0(10);
+c0.reset();
+// setTimeout(() =>{
+// 	console.log(c0.interval);
+// },2000);
+	console.log(c0.interval);
+
+
+
+//  interface extending classes
+
+class Control {
+	private state: any;
+}
+interface SelectableControl extends Control{
+	select(): void;
+}
+class Button extends Control implements SelectableControl{
+	select(){};
+}
+class TextBox extends Control {
+	select(){};
+}
+
+class Image1 extends Control implements SelectableControl{
+	select(){};
+}
+

@@ -52,13 +52,14 @@ mys4 = function (src, sub) {
 };
 console.log(mys4('Tôi là NvG', 'NvG'));
 let myArray;
-myArray = ['Bob', 'Fred'];
-let myStr = myArray[0];
+myArray = ['df', 'Bob', 'df', 'Fred'];
+let myStr = myArray['df'];
 console.log(myStr);
 class Animal {
 }
-class Cat {
-}
+// class Cat {
+// 	hey: string;
+// }
 class Dog extends Animal {
 }
 class Clock {
@@ -92,4 +93,20 @@ class AnalogClock {
 }
 let digital = createClock(DigitalClock, 12, 17);
 let analog = createClock(AnalogClock, 7, 32);
-console.log(digital);
+digital.tick();
+// let square = <Square>{};
+// square.color = 'blue';
+// square.sideLength = 10;
+// console.log(square);
+class ss1 {
+    constructor() {
+        this.color = 'black';
+        this.sideLength = 12;
+        // constructor(color?: string = 'clack', sideLength?: number = 13 ){
+        // 	this.color = color;
+        // 	this.sideLength = sideLength;
+        // };
+    }
+}
+let ss1_01 = new ss1();
+console.log(ss1_01.color);

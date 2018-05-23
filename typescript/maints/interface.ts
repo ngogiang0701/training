@@ -112,12 +112,11 @@ console.log(mys4('Tôi là NvG','NvG'));
 // indexable types
 // ????????????
 interface StringArray {
-	[index: number]: string;
+	[index: string]: string;
 }
 let myArray: StringArray;
-myArray = ['Bob', 'Fred'];
-
-let myStr: string = myArray[0];
+myArray = ['df':'Bob', 'df':'Fred'];
+let myStr: string = myArray['df'];
 
 console.log(myStr);
 
@@ -125,16 +124,16 @@ class Animal{
 	name: string;
 }
 
-class Cat {
-	hey: string;
-}
+// class Cat {
+// 	hey: string;
+// }
 class Dog extends Animal{
 	breed: string; 
 }
 
 interface NotOkay {
-	// [x: number] : Cat;
-	[z: string] : Dog;
+	[index: number] : Animal;
+	[x: string]: Dog;
 	
 	// [z: string] : Dog;
 }
@@ -215,6 +214,36 @@ class AnalogClock implements clkInterface{
 let digital = createClock(DigitalClock, 12, 17);
 
 let analog = createClock (AnalogClock, 7, 32);
+digital.tick();
 
-console.log(digital);
+// console.log(digital.tick());
 
+
+// extending interface
+
+interface Shape{
+	color: string;
+}
+
+interface Square extends Shape{
+	sideLength: number;
+}
+
+// let square = <Square>{};
+// square.color = 'blue';
+// square.sideLength = 10;
+// console.log(square);
+
+class ss1 implements Square{
+	color: string = 'black';
+	sideLength: number = 12;
+	// constructor(color?: string = 'clack', sideLength?: number = 13 ){
+	// 	this.color = color;
+	// 	this.sideLength = sideLength;
+	// };
+	
+
+}
+let ss1_01 = new ss1();
+
+console.log(ss1_01.color);

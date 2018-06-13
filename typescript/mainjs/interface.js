@@ -52,8 +52,8 @@ mys4 = function (src, sub) {
 };
 console.log(mys4('Tôi là NvG', 'NvG'));
 let myArray;
-myArray = ['df', 'Bob', 'df', 'Fred'];
-let myStr = myArray['df'];
+myArray = { name12: 'Bob', name21: 'Fred' };
+let myStr = myArray['name12'];
 console.log(myStr);
 class Animal {
 }

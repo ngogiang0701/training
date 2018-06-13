@@ -115,8 +115,8 @@ interface StringArray {
 	[index: string]: string;
 }
 let myArray: StringArray;
-myArray = ['df':'Bob', 'df':'Fred'];
-let myStr: string = myArray['df'];
+myArray = {name12: 'Bob', name21: 'Fred'};
+let myStr: string = myArray['name12'];
 
 console.log(myStr);
 
@@ -132,8 +132,8 @@ class Dog extends Animal{
 }
 
 interface NotOkay {
-	[index: number] : Animal;
-	[x: string]: Dog;
+	[index: string] : Animal;
+	[x: number]: Dog;
 	
 	// [z: string] : Dog;
 }
